@@ -1,9 +1,7 @@
 ## Lab 2: Neutral Variation
 This lab will take at a few sample files. One with mitochondrial data from primates and another with two populations of stickleback fish that includes individuals from the Eastern Pacific and from the Western Pacific (you can look at the paper here: [https://doi.org/10.1111/j.1558-5646.1994.tb01348.x](https://doi.org/10.1111/j.1558-5646.1994.tb01348.x)
 
-We will be using the Python package `dendropy` to generate summary statistics about the two populations, including Tajima's D. This tutorial is based on the `dendropy` functions described here: [https://dendropy.readthedocs.io/en/v3.12.1/tutorial/popgenstats.html](https://dendropy.readthedocs.io/en/v3.12.1/tutorial/popgenstats.html).
-
-We will be doing accomplishing this on the supercomputer in your `miniconda` environment. We went over how to set up your `miniconda` environment in class. If you need more information visit: [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html).
+We will be using the Python package `dendropy` to generate summary statistics about the two populations, including Tajima's D. We will be doing this on the supercomputer in your `miniconda` environment. We went over how to set up your `miniconda` environment in class. If you need more information visit: [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html).
 
 First, login to the supercomputer using PuTTy or your Mac terminal.
 
@@ -76,7 +74,7 @@ We'll initiate two populations. Don't worry so much about the Python code here, 
 ```
 p1 = []
 p2 = []
-for idx, t in enumerate(seqs.taxon_set):
+for idx, t in enumerate(seqs.taxon_namespace):
     if t.label.startswith('EPAC'):
         p1.append(seqs[t])
     else:
