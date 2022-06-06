@@ -4,69 +4,67 @@ Navigate to http://genepop.curtin.edu.au. This is the website for the GenePop so
 
 Click on the “Data input format” link under “Additional Help Files”. This will take you to http://genepop.curtin.edu.au/help_input.html, which outlines the details about the file formats acceptable to GenePop. Read over the details and note the particulars about the file format.
 
-Return to the home page and click on the “Option 6 Help” to the right of option 6 (here: http://genepop.curtin.edu.au/Option6.html). Read through the suboptions. I just want you to get a taste for the types of FST analyses that can be run. We will be doing a more “vanilla” analysis, but it is good for you to understand the other types of things that you can do.
+Return to the home page and click on the “Option 6 Help” to the right of option 6 (here: http://genepop.curtin.edu.au/Option6.html). Read through the sub options. I just want you to get a taste for the types of FST analyses that can be run. We will be doing a more “vanilla” analysis, but it is good for you to understand the other types of things that you can do.
 
-Now, open your terminal/command prompt and ssh into the supercomputer.
+Now, open your terminal/command prompt and `ssh` into the supercomputer.
 
-Now navigate to your compute directory and create a new directory entitled “Lab1”. Now copy the data for this exercise from our shared folder (/fslhome/\<your_username>/fsl_groups/fslg_pws472/compute/Lab1/sample_pop.txt) into your Lab1 directory. The data contained in this file are for three loci (Loc1, Loc2, and Loc3) spread over 3 populations. For purposes of this tutorial, let’s assume that the sample file contains three fish populations and that they occupy three different ecological niches, population 1 can be found in lakes, population 2 can be found in the running water in nearby streams, and population 3 can be found in the pools in nearby streams.
-
-Now, I would like to you to run the following several analyses, modifying the input file so that it works for each analysis. The results from these analyses should be placed into a table as part of your lab write-up.
-
-In order to conduct pairwise comparisons, you’ll need to make a copy of the file and modify it so that it only includes two populations. In order to conduct three population comparisons, you can use the entire file.
-
-First, let’s make sure that you have conda loaded and that you are in your biopython virtual environment.
-
+Now navigate to your compute directory and create a new directory entitled `lab1`. 
 ```
-$ source ~/.bashrc
-
-$ conda activate biopython
+cd ~/compute
+mkdir lab1
 ```
-
-Now, we’re going to install genepop with conda. Make sure that you are in your biopython environment, e.g. (biopython) should be in front of your cursor.
-
+Now copy the data for this exercise from our shared folder into your `lab1` directory. 
 ```
-$ conda install -c bioconda genepop
+cp ~/fsl_groups/fslg_pws472/compute/Lab1/sample_pop.txt lab1
 ```
+The data contained in this file are for three loci (Loc1, Loc2, and Loc3) spread over 3 populations. For purposes of this tutorial, let's assume that the sample file contains three fish populations and that they occupy three different ecological niches. Population 1 can be found in lakes, population 2 can be found in the running water in nearby streams, and population 3 can be found in the pools in nearby streams.
 
-Next, let’s start up Python:
+Now, I would like to you to run the following analyses, modifying the input file so that it works for each analysis. The results from these analyses should be placed into a table as part of your lab write-up.
 
+In order to conduct pairwise comparisons, you'll need to make a copy of the file and modify it so that it only includes two populations. In order to conduct three population comparisons, you can use the entire file.
+
+First, let's make sure that you have conda loaded and that you are in your `biopython` virtual environment.
 ```
-$ python
+source ~/.bashrc
+conda activate biopython
 ```
-
-Now, we can look at the populations in our file to see if everything loads in correctly. Anything that starts with “#” below is a comment and should not be entered. The >>> just indicates that you are within Python and also should not be entered.
-
+Now, we're going to install genepop with conda. Make sure that you are in your `biopython` environment, e.g. (biopython) should be in front of your cursor.
+```
+conda install -c bioconda genepop
+```
+Next, lets start up Python.
+```
+python
+```
+Now, we can look at the populations in our file to see if everything loads in correctly. Anything that starts with “#” below is a comment and should not be entered. 
 ```
 # Load the GenePop module from Biopython
->>> from Bio.PopGen import GenePop
+from Bio.PopGen import GenePop
 
 # Load your pop file
->>> record = GenePop.read(open("sample_pop.txt"))
+record = GenePop.read(open("sample_pop.txt"))
 
 # Now check to ensure that everything loaded properly
->>> record.populations
+record.populations
 
 # Now see that your locus names load properly
->>> record.loci_list
+record.loci_list
 
 ```
 
-Ok, now we can load the EasyController, which will allow us to conduct some tests (for full capability, check here: https://biopython.org/docs/1.75/api/Bio.PopGen.GenePop.EasyController.html). 
+Ok, now we can load the `EasyController`, which will allow us to conduct some tests (for full capability, check here: https://biopython.org/docs/1.75/api/Bio.PopGen.GenePop.EasyController.html). 
 
 ```
->>> from Bio.PopGen.GenePop.EasyController import EasyController
->>> three_pops = EasyController("sample_pop.txt")
->>> print(three_pops.get_basic_info())
+from Bio.PopGen.GenePop.EasyController import EasyController
+three_pops = EasyController("sample_pop.txt")
+print(three_pops.get_basic_info())
 ```
-
-Now, let’s first run an FST on all three. You can do this with:
-
+Now, let's run an FST on all three. You can do this with:
 ```
 >>> three_pops.get_multilocus_f_stats()
 ```
-
-This will output the three population, averaged FIS, FST, and FIT (in that order)
-Now, after modifying your input files, you can also:
+This will output the three populations' averaged FIS, FST, and FIT (in that order)
+Now, after modifying your input files, you can:
 
 1.	Estimate FST values between Pop1 and Pop2
 2.	Estimate FST values between Pop1 and Pop3
