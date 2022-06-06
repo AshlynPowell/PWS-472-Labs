@@ -1,6 +1,6 @@
 ## Lab 8: Demographic histories with `psmc`
 
-During this lab, we will use our bam files (generated during lab 7) to estimate demographic histories using the pairwise sequential Markovian coalescent (PSMC).
+During this lab, we will use our bam files (generated in lab 7) to estimate demographic histories using the pairwise sequential Markovian coalescent (PSMC).
 
 The first thing you'll want to do is create a `lab8` directory in your `~/compute` directory. Change directories into your newly created `lab8` directory. Then copy both the `genome` directory and the `variants` directory from `~/fsl_groups/fslg_pws472/compute/lab7` into your new `lab8` directory. **Hint**: Use `cp -r ~/fsl_groups/fslg_pws472/compute/lab7/genome ./` to copy the genome directory. Just replace "genome" with "variants" in the first path to copy over the variants folder as well.
 
