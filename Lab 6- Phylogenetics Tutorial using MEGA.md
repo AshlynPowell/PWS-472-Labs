@@ -11,7 +11,7 @@ downloaded from BOLD systems.
 
 4. At this point we are going to leave MEGA to find the sequences to use for the phylogeny.
 
-5. Navigate to BOLD systems http://www.boldsystems.org/index.php. Click on ‘Databases’, found along the top bar. Click on ‘Public Data Portal’. 
+5. Navigate to BOLD systems http://www.boldsystems.org/index.php. Click on 'Databases', found along the top bar. Click on 'Public Data Portal'. 
 
 6. Search for sequences of interest, ideally several genera within a family. To do this you can look up any family you are interested in and find several genera within that family. For example, if your family was Felidae you could search for Panthera, Neofelis, Lynx and Puma. This can be found from a simple google search. You should also choose an “outgroup” or a taxon that fall just outside your organism of interest. For example, in the case of Felidae, this could be a Hyena.
 
@@ -21,16 +21,16 @@ downloaded from BOLD systems.
 8. Once you have a single fasta file with 9-10 sequences open MEGA.
 <img width="870" alt="Screen Shot 2022-06-06 at 2 35 08 PM" src="https://user-images.githubusercontent.com/70609417/172244369-4f208655-f805-456c-a2a5-0e4169920fac.png">
 
-9. In MEGA, go to ‘File’, ‘Open a new session’, select the fasta file you just created from the browse tab, click ‘Align’.
+9. In MEGA, go to 'File', 'Open a new session', select the fasta file you just created from the browse tab, click 'Align'.
 
-10. A separate window should open with the names and sequences of each species in your fasta file. Select ‘Align’, then ‘Align by MUSCLE’, then ‘OK’, then ‘OK’.
+10. A separate window should open with the names and sequences of each species in your fasta file. Select 'Alignment', then 'Align by MUSCLE', then 'OK', then 'OK'.
 
-11. Once your data is aligned, select ‘Data’, then export alignment and ‘Export as MEGA’. Choose a location where you want the .MEG file to go. You will use this file to create your phylogenetic tree so be sure you know where it is saved.
+11. Once your data is aligned, select 'Data', then'Export Alignment', then 'MEGA Format'. Choose a location where you want the .MEG file to go. You will use this file to create your phylogenetic tree so be sure you know where it is saved.
 
-12. Go back to your original MEGA window and make trees. You will make two phylogenetic trees using different computational methods. First, select the circle labeled ‘PHYLOGENY’ and then ‘Construct/Test Maximum Likelihood Tree’. You will have to direct the program to the .meg file you saved from the alignment. Change the rates and patterns to Has Invariant Sites in the ‘Rates among Sites’ dropdown. Make sure the number of threads is 2. Click ‘OK’ and MEGA will generate your tree for you. You can then export your tree under the file tab.
+12. Go back to your original MEGA window and make trees. You will make two phylogenetic trees using different computational methods. First, select the circle labeled 'PHYLOGENY' and then 'Construct/Test Maximum Likelihood Tree'. You will have to direct the program to the .meg file you saved from the alignment. Change the rates and patterns to Has Invariant Sites in the 'Rates among Sites' dropdown. Make sure the number of threads is 2. Click 'OK' and MEGA will generate your tree for you. You can then export your tree under the file tab.
 <img width="582" alt="Screen Shot 2022-06-06 at 2 39 08 PM" src="https://user-images.githubusercontent.com/70609417/172244964-e9504ac4-c805-4f31-b5c7-570623bfb78c.png">
 
-13. Repeat this process by selecting the circle labeled ‘PHYLOGENY’ and then Construct/Test Maximum Parsimony Tree’ **This is different from the Maximum likelihood tree**. Specify the same parameters and export the tree when you are finished.
+13. Repeat this process by selecting the circle labeled 'PHYLOGENY' and then Construct/Test Maximum Parsimony Tree' **This is different from the Maximum likelihood tree**. Specify the same parameters and export the tree when you are finished.
 
 14. Things to keep in mind for the write-up:
 - What organism did you decide to study (if you so something like this for your
