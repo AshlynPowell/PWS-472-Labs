@@ -15,9 +15,11 @@ downloaded from BOLD systems.
 
 6. Search for sequences of interest, ideally several genera within a family. To do this you can look up any family you are interested in and find several genera within that family. For example, if your family was Felidae you could search for Panthera, Neofelis, Lynx and Puma. This can be found from a simple google search. You should also choose an “outgroup” or a taxon that fall just outside your organism of interest. For example, in the case of Felidae, this could be a Hyena.
 
-7. Download 9-10 sequences representing multiple genera into a fasta file by selecting them and clicking the blue fasta button in the upper right-hand corner. You might have to download the fasta files separately and then manually move sequences into a single file. <img width="555" alt="Screen Shot 2022-06-06 at 11 19 15 AM" src="https://user-images.githubusercontent.com/70609417/172214832-cb4ee564-119c-4ee5-b10b-abb815faa515.png">
+7. Download 9-10 sequences representing multiple genera into a fasta file by selecting them and clicking the blue fasta button in the upper right-hand corner. You might have to download the fasta files separately and then manually move sequences into a single file. 
+<img width="469" alt="Screen Shot 2022-06-06 at 2 34 40 PM" src="https://user-images.githubusercontent.com/70609417/172244340-377b0a56-1cc1-4f0c-a711-f20fcb9f6177.png">
 
-8. Once you have a single fasta file with 9-10 sequences open MEGA.<img width="851" alt="Screen Shot 2022-06-06 at 11 19 56 AM" src="https://user-images.githubusercontent.com/70609417/172214950-abb456b5-4c2c-4bd6-8669-b13510fe7b24.png">
+8. Once you have a single fasta file with 9-10 sequences open MEGA.
+<img width="870" alt="Screen Shot 2022-06-06 at 2 35 08 PM" src="https://user-images.githubusercontent.com/70609417/172244369-4f208655-f805-456c-a2a5-0e4169920fac.png">
 
 9. In MEGA, go to ‘File’, ‘Open a new session’, select the fasta file you just created from the browse tab, click ‘Align’.
 
@@ -25,7 +27,8 @@ downloaded from BOLD systems.
 
 11. Once your data is aligned, select ‘Data’, then export alignment and ‘Export as MEGA’. Choose a location where you want the .MEG file to go. You will use this file to create your phylogenetic tree so be sure you know where it is saved.
 
-12. Go back to your original MEGA window and make trees. You will make two phylogenetic trees using different computational methods. First, select the circle labeled ‘PHYLOGENY’ and then ‘Construct/Test Maximum Likelihood Tree’. You will have to direct the program to the .meg file you saved from the alignment. Change the rates and patterns to Has Invariant Sites in the ‘Rates among Sites’ dropdown. Make sure the number of threads is 2. Click ‘OK’ and MEGA will generate your tree for you. You can then export your tree under the file tab.  <img width="481" alt="Screen Shot 2022-06-06 at 11 20 21 AM" src="https://user-images.githubusercontent.com/70609417/172215014-d088c751-2a46-466c-bcca-8d3d9e0bf248.png">
+12. Go back to your original MEGA window and make trees. You will make two phylogenetic trees using different computational methods. First, select the circle labeled ‘PHYLOGENY’ and then ‘Construct/Test Maximum Likelihood Tree’. You will have to direct the program to the .meg file you saved from the alignment. Change the rates and patterns to Has Invariant Sites in the ‘Rates among Sites’ dropdown. Make sure the number of threads is 2. Click ‘OK’ and MEGA will generate your tree for you. You can then export your tree under the file tab.
+<img width="481" alt="Screen Shot 2022-06-06 at 11 20 21 AM" src="https://user-images.githubusercontent.com/70609417/172215014-d088c751-2a46-466c-bcca-8d3d9e0bf248.png">
 
 13. Repeat this process by selecting the circle labeled ‘PHYLOGENY’ and then Construct/Test Maximum Parsimony Tree’ **This is different from the Maximum likelihood tree**. Specify the same parameters and export the tree when you are finished.
 
