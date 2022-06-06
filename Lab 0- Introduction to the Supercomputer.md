@@ -33,7 +33,7 @@ Your screen should look something like this:
 
 Type in `bash Miniconda3-latest-Linux-x86_64.sh` and hit enter. When prompted, accept any
 terms and conditions / questions (say yes by hitting the `Y` key or hit enter). 
-* the easiest thing to do is use tab complete: type `bash Mi`, then hit tab, and the rest should fill in.
+\* the easiest thing to do is use tab complete: type `bash Mi`, then hit tab, and the rest should fill in.
 
 <img width="809" alt="Pic7" src="https://user-images.githubusercontent.com/70609417/171961258-e8f74445-372f-460c-b90b-110824a371a0.png">
 
