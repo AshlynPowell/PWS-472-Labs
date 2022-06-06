@@ -2,7 +2,7 @@
 
 Using the Barcode of Life Data System to identify unknown samples of DNA
 
-In this lab, you will be identifying unknown sequences in a file using the Barcode of Life Data System (BOLD, [BOLD](boldsystems.org)).
+In this lab, you will be identifying unknown sequences in a file using the Barcode of Life Data System ([BOLD](boldsystems.org)).
 
 You will be instructed in class how to access and use BOLD. If you are not in class, please meet up with a fellow student or come to student hours for more instruction.
 
