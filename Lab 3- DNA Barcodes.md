@@ -1,4 +1,4 @@
-Lab #3
+## Lab 3: DNA Barcoding
 
 Using the Barcode of Life Data System to identify unknown samples of DNA
 

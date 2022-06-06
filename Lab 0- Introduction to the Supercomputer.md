@@ -1,4 +1,4 @@
-## Introduction to the Supercomputer
+## Lab 0: Introduction to the Supercomputer
 ### Logging into the Supercomputer
 Fill out the first three boxes with [your netID]@ssh.rc.byu.edu, and hit enter
 
