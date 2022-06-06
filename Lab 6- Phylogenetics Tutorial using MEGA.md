@@ -2,7 +2,8 @@
 
 In this tutorial you will make a phylogenetic tree using a program called MEGA with sequences
 downloaded from BOLD systems.
-1. Download MEGA on your computer by going to https://www.megasoftware.net/. Download this on to the machine you are going to use for the analysis, make sure to select the correct system (Windows, macOS, Ubuntu, etc.), Graphical (GUI) and MEGA X (64-bit). Click download, go through the user agreements and user profile, indicating that you are a student at a university. <img width="794" alt="Screen Shot 2022-06-06 at 11 18 57 AM" src="https://user-images.githubusercontent.com/70609417/172213618-2cbbf489-bffe-4869-92d5-495d6fbbcac9.png">
+1. Download MEGA on your computer by going to https://www.megasoftware.net/. Download this on to the machine you are going to use for the analysis, make sure to select the correct system (Windows, macOS, Ubuntu, etc.), Graphical (GUI) and MEGA X (64-bit). Click download, go through the user agreements and user profile, indicating that you are a student at a university. 
+<img width="1164" alt="Screen Shot 2022-06-06 at 2 29 24 PM" src="https://user-images.githubusercontent.com/70609417/172243526-58e45974-8b19-4397-ae24-7512c58443fa.png">
 2. Click on the MEGA… _setup.exe file in your downloads folder. There will be several set up options such as letting the program have access to your computer, setup language, licensing agreement as well as a location to install the program. For this location, direct it to your desktop as that will be the easiest place to run it from. You can do that using the browse tab and then select Users, your username, and then Desktop.
 3. Once the program has been installed, it should be launched.
 4. At this point we are going to leave MEGA to find the sequences to use for the phylogeny.
