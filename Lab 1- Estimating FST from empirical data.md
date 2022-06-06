@@ -49,7 +49,6 @@ record.populations
 
 # Now see that your locus names load properly
 record.loci_list
-
 ```
 
 Ok, now we can load the `EasyController`, which will allow us to conduct some tests (for full capability, check here: https://biopython.org/docs/1.75/api/Bio.PopGen.GenePop.EasyController.html). 
