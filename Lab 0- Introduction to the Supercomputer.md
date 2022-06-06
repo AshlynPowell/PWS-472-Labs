@@ -32,7 +32,8 @@ Your screen should look something like this:
 #### Step 2: Initialize CONDA
 
 Type in `bash Miniconda3-latest-Linux-x86_64.sh` and hit enter. When prompted, accept any
-terms and conditions / questions (say yes by hitting the `Y` key or hit enter). * the easiest thing to do is use tab complete: type `bash Mi`, then hit tab, and the rest should fill in.
+terms and conditions / questions (say yes by hitting the `Y` key or hit enter). 
+* the easiest thing to do is use tab complete: type `bash Mi`, then hit tab, and the rest should fill in.
 
 <img width="809" alt="Pic7" src="https://user-images.githubusercontent.com/70609417/171961258-e8f74445-372f-460c-b90b-110824a371a0.png">
 
@@ -75,7 +76,6 @@ In the command line, create a text file called "hello_there.job" using the `nano
 ```
 nano hello_there.job
 ```
-(hit enter)
 You'll be brought to a screen that looks like this:
 
 <img width="321" alt="Pic13" src="https://user-images.githubusercontent.com/70609417/171961348-491c8175-d486-48be-aef3-074b9bede0e1.png">
@@ -128,6 +128,6 @@ You can do this as much as you'd like:
 
 If you signed up for email alerts, you'll be notified if the job is begun, finished, or aborted.
 
-Remember to properly exit out of the super computer by typing in `exit`:
+Remember to properly exit out of the super computer by typing in `exit`.
 
 <img width="613" alt="Pic20" src="https://user-images.githubusercontent.com/70609417/171961485-939b22fe-41a3-4c47-affb-0f2796369d7b.png">
