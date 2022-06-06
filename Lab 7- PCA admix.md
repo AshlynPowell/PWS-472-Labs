@@ -106,22 +106,24 @@ Rscript PCA_plot.r
 ### 6. Run Admixture analysis with `NGSAdmix`
 
 `NGSAdmix` is now part of the `ANGSD` package and can perform admixture analysis using the beagle file of genotype likelihoods that you generated in step 1. `cd` into your `jobs` directory and create a job file with the following commands. The parameter that you need to think about here is `K`, which as you learned in the lecture is the number of ancestral populations. Since we have two populations in this dataset, one from Venezuela and one from Guyana, we will set `K` to 2.
-- **conda env**: `angsd`
-- **command**: `NGSadmix -likes ../angsd/PCA.beagle.gz -K 2 -o ../angsd/siskin_admix -P $SLURM_NPROCS`
-
+```
+conda activate angsd
+NGSadmix -likes ../angsd/PCA.beagle.gz -K 2 -o ../angsd/siskin_admix -P $SLURM_NPROCS
+```
 When the job is finished, you will have a couple of new files in the `angsd` directory. `siskin_admix.fopt.gz` is a gzipped file that contains the estimated allele frequencies for each population for each locus. `siskin_admix.qopt` contains the estimated admixture proportions for each individual.
 
 ### 7. Create simple admixture plot
 Now we will create a simple admixture plot using our results from `NGSadmix`
 Copy the script, `admix_plot.r` from `~/fsl_groups/fslg_pws472/compute/lab7/scripts/admix_plot.r` to your `angsd` directory.
 Make sure that `siskin_pop.txt` is still in your directory. This is another fast script, which is fine to run with `qrsh`.
-- **conda env**: `r`
-- **command**: `Rscript admix_plot.r`
-
+```
+conda activate r
+Rscript admix_plot.r
+```
 You will now have a plot in an image called `siskin_admix.png`. Feel free to download it and take a look. You will notice that, for these populations, there is very little evidence of admixture with a `K` of 2.
 
 ### 8. Rerun 8 and 9 with a `K` of 3 and a `K` of 4
-We don't have enough individuals to make this very interesting, but re-run number 4 and 5, with different `K` numbers. Name the output differently so you donn't overwrite your first results. Modify the `R` script so that it reads the new file and writes a different image name. What do you notice?
+We don't have enough individuals to make this very interesting, but re-run number 4 and 5, with different `K` numbers. Name the output differently so you don't overwrite your first results. Modify the `R` script so that it reads the new file and writes a different image name. What do you notice?
 
 ### For the Lab write-up
 This lab will combined with lab 8 into a single lab write-up (double the amount of points and double the length). However, feel free to get started with this one. Consider the following as you write it up:
