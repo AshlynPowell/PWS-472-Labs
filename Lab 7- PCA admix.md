@@ -43,7 +43,7 @@ Next, we're going to create a file called  `bamlist.txt`. This file will have re
     
 You can create this list with the command:
 ```
-$ ls ../variants/*mdup.bam > bamlist.txt
+ls ../variants/*mdup.bam > bamlist.txt
 ```
 When you create it, if you view it with `cat`, it should look something like the following:  
 ```
