@@ -13,10 +13,7 @@ The first thing you'll want to do is create a `lab8` directory in your `~/comput
 	+ **command**: 
 
 	```
-	samtools mpileup -C50 -uf ../genome/Contig86_pilon.fasta \ 
-	../variants/ref_siskin.sorted.bam.mdup.bam \
-	| bcftools call -c - | 	vcfutils.pl vcf2fq -d 16 -D 120 \
-	| gzip > ../psmc/diploid.fq.gz
+	samtools mpileup -C50 -uf ../genome/Contig86_pilon.fasta ../variants/ref_siskin.sorted.bam.mdup.bam | bcftools call -c - | 	vcfutils.pl vcf2fq -d 16 -D 120 | gzip > ../psmc/diploid.fq.gz
 	```
 
 ### 2. `PSMC`
