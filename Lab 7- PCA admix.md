@@ -47,16 +47,16 @@ ls ../variants/*mdup.bam > bamlist.txt
 ```
 When you create it, if you view it with `cat`, it should look something like the following:  
 ```
-     ../variants/JH-12872_AGTCAA.sam.sorted.bam.mdup.bam
-     ../variants/MB-12866_GTTTCG.sam.sorted.bam.mdup.bam
-     ../variants/MB-12867_TTAGGC.sam.sorted.bam.mdup.bam
-     ../variants/MB-12868_TGACCA.sam.sorted.bam.mdup.bam
-     ../variants/MB-S5_CAGATC.sam.sorted.bam.mdup.bam
-     ../variants/MB-S6_ACTTGA.sam.sorted.bam.mdup.bam
-     ../variants/MB-S7_GATCAG.sam.sorted.bam.mdup.bam
-     ../variants/MB-S8_TAGCTT.sam.sorted.bam.mdup.bam
-     ../variants/MB-S9_GGCTAC.sam.sorted.bam.mdup.bam
-     ../variants/ref_siskin.sorted.bam.mdup.bam
+../variants/JH-12872_AGTCAA.sam.sorted.bam.mdup.bam
+../variants/MB-12866_GTTTCG.sam.sorted.bam.mdup.bam
+../variants/MB-12867_TTAGGC.sam.sorted.bam.mdup.bam
+../variants/MB-12868_TGACCA.sam.sorted.bam.mdup.bam
+../variants/MB-S5_CAGATC.sam.sorted.bam.mdup.bam
+../variants/MB-S6_ACTTGA.sam.sorted.bam.mdup.bam
+../variants/MB-S7_GATCAG.sam.sorted.bam.mdup.bam
+../variants/MB-S8_TAGCTT.sam.sorted.bam.mdup.bam
+../variants/MB-S9_GGCTAC.sam.sorted.bam.mdup.bam
+../variants/ref_siskin.sorted.bam.mdup.bam
 ```
 Now create a new job file called `angsd_geno_like.job`.
 Remember that you can do this with the job script generator from the [supercomputer website](https://rc.byu.edu/documentation/slurm/script-generator).
