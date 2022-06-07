@@ -2,12 +2,12 @@
 
 For this lab, we will be using `bam` files output from `bowtie2` (a read-mapping program), calling variants with `ANGSD`, and then creating a PCA plot and an ADMIXTURE plot. Note that this is a very small sample size for an admixture plot, however, the process would be the same with a larger sample size.
 
-We will be using samfiles provided that I have already mapped reads to. Reminder, that you should create your own folder in which to run these analyses, ideally in your `~/compute` directory (rather than in the class shared directory).
+We will be using samfiles that I have already mapped reads to. Reminder, that you should create your own folder in which to run these analyses, ideally in your `~/compute` directory (rather than in the class shared directory).
 
 ### 1. Copy the `lab7` directory to your `compute` directory
 ```
 cd ~/compute
-cp -r ~/fsl_groups/fslg_pws472/compute/lab7 .
+cp -r ~/fsl_groups/fslg_pws472/compute/lab7 ./
 cd lab7
 mkdir jobs
 ```
@@ -67,8 +67,6 @@ source ~/.bashrc
 conda activate angsd
 angsd -GL 1 -out PCA -nThreads $SLURM_NPROCS -doGlf 2 -doMajorMinor 1 -SNP_pval 1e-6 -doMaf 1 -bam bamlist.txt
 ```
-        
-There are a lot of options here. You can look at them more in depth in the ANGSD documentation linked above.
 To submit the job, use: 
 ```
 sbatch angsd_geno_like.job
@@ -78,8 +76,8 @@ When it is complete, look at the files in your directory. You should have three 
 ### 4. Generate a covariance matrix using  `PCAngsd`
 
 In this step, we're going to use the  `PCA.beagle.gz`  file to create a covariance matrix in  `PCAngsd`.
-First we have to install `PCAngsd`. You can do this with the following commands:
 
+First we have to install `PCAngsd`. You can do this with the following commands:
 ```
 cd ~/compute/lab7
 wget https://github.com/Rosemeis/pcangsd/archive/refs/tags/v.0.99.tar.gz
@@ -90,7 +88,6 @@ python setup.py build_ext --inplace
 cd ../angsd
 ```
 To create covariance matrix:  
-
 ```
 python ../pcangsd-v.0.99/pcangsd.py -b PCA.beagle.gz -o siskin_PCA
 ```
