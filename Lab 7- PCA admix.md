@@ -4,7 +4,7 @@ For this lab, we will be using `bam` files output from `bowtie2` (a read-mapping
 
 We will be using samfiles provided that I have already mapped reads to. Reminder, that you should create your own folder in which to run these analyses, ideally in your `~/compute` directory (rather than in the class shared directory).
 
-### 1. Copy the lab7 directory to your `compute` directory
+### 1. Copy the `lab7` directory to your `compute` directory
 ```
 cd ~/compute
 cp -r ~/fsl_groups/fslg_pws472/compute/lab7 .
@@ -82,8 +82,13 @@ First we have to install `PCAngsd`. You can do this with the following commands:
 
 ```
 cd ~/compute/lab7
-git clone https://github.com/Rosemeis/pcangsd.git
-cd pcangsd
+# git clone https://github.com/Rosemeis/pcangsd.git
+# cd pcangsd
+
+wget https://github.com/Rosemeis/pcangsd/archive/refs/tags/v.0.99.tar.gz
+tar -xvzf v.0.99.tar.gz
+cd pcangsd-v.0.99/
+
 conda activate angsd
 python setup.py build_ext --inplace
 cd ../angsd
@@ -91,7 +96,9 @@ cd ../angsd
 To create covariance matrix:  
 
 ```
-python ../pcangsd/pcangsd.py -beagle PCA.beagle.gz -o siskin_PCA
+# python ../pcangsd/pcangsd.py -beagle PCA.beagle.gz -o siskin_PCA
+
+python ../pcangsd-v.0.99/pcangsd.py -b PCA.beagle.gz -o siskin_PCA
 ```
 After this is finished running, you should have a file in your directory called  `siskin_PCA.cov`. This is your covariance matrix and can be used to generate your PCA.
 
