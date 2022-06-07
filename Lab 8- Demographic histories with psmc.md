@@ -4,7 +4,7 @@ During this lab, we will use our bam files (generated in lab 7) to estimate demo
 
 The first thing you'll want to do is create a `lab8` directory in your `~/compute` directory. Change directories into your newly created `lab8` directory. Then copy both the `genome` directory and the `variants` directory from `~/fsl_groups/fslg_pws472/compute/lab7` into your new `lab8` directory. **Hint**: Use `cp -r ~/fsl_groups/fslg_pws472/compute/lab7/genome ./` to copy the genome directory. Just replace "genome" with "variants" in the first path to copy over the variants folder as well.
 
-### 1. Identify heterozygous sites using mpileup and bcftools, then export to a diploid `FASTQ` that can be converted into a special `PSMC` `FASTA` file.
+### 1. Identify heterozygous sites using `mpileup` and `bcftools`, then export to a diploid `FASTQ` that can be converted into a special `PSMC` `FASTA` file.
 * Create a new directory in `lab8` called `psmc`
 * Create another new directory in `lab8` called `jobs`
 * This process is outlined in the commands below. The `-d` parameter is for minimum depth, which should be about 1/3 of the average depth of coverage and `-D` is maximum depth, which should be about twice the depth of coverage. In this case, for the reference genome, we use `-d 16 and -D 120`. Note that, for the resequencing jobs, you will have to adjust these parameters. These have only 10x coverage on average so should be approx `-d 3` and `-D 25`. Submit the following job from your `jobs` directory from a job file called `diploid_fastq.job`. Ensure that you run the reference from Guyana in this first run:
