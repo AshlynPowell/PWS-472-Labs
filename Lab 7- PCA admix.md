@@ -82,13 +82,9 @@ First we have to install `PCAngsd`. You can do this with the following commands:
 
 ```
 cd ~/compute/lab7
-# git clone https://github.com/Rosemeis/pcangsd.git
-# cd pcangsd
-
 wget https://github.com/Rosemeis/pcangsd/archive/refs/tags/v.0.99.tar.gz
 tar -xvzf v.0.99.tar.gz
 cd pcangsd-v.0.99/
-
 conda activate angsd
 python setup.py build_ext --inplace
 cd ../angsd
@@ -96,8 +92,6 @@ cd ../angsd
 To create covariance matrix:  
 
 ```
-# python ../pcangsd/pcangsd.py -beagle PCA.beagle.gz -o siskin_PCA
-
 python ../pcangsd-v.0.99/pcangsd.py -b PCA.beagle.gz -o siskin_PCA
 ```
 After this is finished running, you should have a file in your directory called  `siskin_PCA.cov`. This is your covariance matrix and can be used to generate your PCA.
@@ -130,7 +124,7 @@ Rscript admix_plot.r
 You will now have a plot in an image called `siskin_admix.png`. Feel free to download it and take a look. You will notice that, for these populations, there is very little evidence of admixture with a `K` of 2.
 
 ### 8. Rerun 8 and 9 with a `K` of 3 and a `K` of 4
-We don't have enough individuals to make this very interesting, but re-run number 4 and 5, with different `K` numbers. Name the output differently so you don't overwrite your first results. Modify the `R` script so that it reads the new file and writes a different image name. What do you notice?
+We don't have enough individuals to make this very interesting, but re-run number 6 and 7, with different `K` numbers. Name the output differently so you don't overwrite your first results. Modify the `R` script so that it reads the new file and writes a different image name. What do you notice?
 
 ### For the Lab write-up
 This lab will combined with lab 8 into a single lab write-up (double the amount of points and double the length). However, feel free to get started with this one. Consider the following as you write it up:
