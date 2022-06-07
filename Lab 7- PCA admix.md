@@ -123,7 +123,7 @@ You will now have a plot in an image called `siskin_admix.png`. Feel free to dow
 ### 8. Rerun 8 and 9 with a `K` of 3 and a `K` of 4
 We don't have enough individuals to make this very interesting, but re-run number 6 and 7, with different `K` numbers. Name the output differently so you don't overwrite your first results. Modify the `R` script so that it reads the new file and writes a different image name. What do you notice?
 
-### For the Lab write-up
+### 9. For the Lab write-up
 This lab will combined with lab 8 into a single lab write-up (double the amount of points and double the length). However, feel free to get started with this one. Consider the following as you write it up:
 - Your lab write-up should contain clear methods on which analyses you performed and why
 - When introducing each method, you should give a short explanation of what the software is actually doing
