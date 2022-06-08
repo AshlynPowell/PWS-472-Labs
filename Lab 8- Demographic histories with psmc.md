@@ -19,16 +19,25 @@ samtools mpileup -C50 -uf ../genome/Contig86_pilon.fasta ../variants/ref_siskin.
 ### 2. `PSMC`
 * In this step, we will create the `PSMC` `FASTA` file. Do this by submitting this job using a job file in your `jobs` directory.
 	+ **module to load**: ```module load psmc```
-	+ **command**: ```fq2psmcfa -q20 ../psmc/diploid.fq.gz > ../psmc/siskin.psmcfa```
+	+ **command**: 
+```
+fq2psmcfa -q20 ../psmc/diploid.fq.gz > ../psmc/siskin.psmcfa
+```
 
 * First, run a single `PSMC` run.
 	+ **module to load**: `module load psmc`
-	+ **command**: ```psmc -N25 -t15 -r5 -p "4+25*2+4+6" -o ../psmc/siskin.psmc ../psmc/siskin.psmcfa```
+	+ **command**:
+```
+psmc -N25 -t15 -r5 -p "4+25*2+4+6" -o ../psmc/siskin.psmc ../psmc/siskin.psmcfa
+```
 
 * Finally, we can create the `PSMC` plot without bootstrapping. This doesn't take a long time so go ahead and run it directly into the `lab8/psmc` directory.
     + **module to load**: `module load gnuplot`
     + **module to load**: `module load psmc`
-    + **command**: ```psmc_plot.pl -p -u 3.18e-09 -g 4.2 siskin_psmc siskin.psmc```
+    + **command**: 
+```
+psmc_plot.pl -p -u 3.18e-09 -g 4.2 siskin_psmc siskin.psmc
+```
 
 ### 3. Run `PSMC` on your resequencing data
 * Now re-run the first two steps on your resequencing data (the additional 9 individuals) to generate additional `psmc` plots. Keep in mind that you should both adjust the `-d` and `-D` parameters *and* specify a correction when plotting the data. When I looked at the number of SNPs in 10x coverage data as compared with 100x coverage data, I noticed that we lost about 20% of our high confidence SNPs. In order to correct for this, you can specify `-M "sample_name=0.2"`, for example, for MB-S6, you might specify something like:
