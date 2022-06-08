@@ -12,9 +12,9 @@ The first thing you'll want to do is create a `lab8` directory in your `~/comput
 	+ **module to load**: ```module load bcftools```
 	+ **command**: 
 
-	```
-	samtools mpileup -C50 -uf ../genome/Contig86_pilon.fasta ../variants/ref_siskin.sorted.bam.mdup.bam | bcftools call -c - | 	vcfutils.pl vcf2fq -d 16 -D 120 | gzip > ../psmc/diploid.fq.gz
-	```
+```
+samtools mpileup -C50 -uf ../genome/Contig86_pilon.fasta ../variants/ref_siskin.sorted.bam.mdup.bam | bcftools call -c - | vcfutils.pl vcf2fq -d 16 -D 120 | gzip > ../psmc/diploid.fq.gz
+```
 
 ### 2. `PSMC`
 * In this step, we will create the `PSMC` `FASTA` file. Do this by submitting this job using a job file in your `jobs` directory.
