@@ -8,40 +8,6 @@ Enter the same password you use for the Fulton supercomputing lab and the authen
 
 <img width="791" alt="Pic2" src="https://user-images.githubusercontent.com/70609417/171961156-9ae74527-e17c-45cb-bf23-4d12a68ec68a.png">
 
-### Importing CONDA
-
-#### Step 1: Get miniconda
-Google miniconda and click on the conda documentation.
-
-<img width="585" alt="Pic3" src="https://user-images.githubusercontent.com/70609417/171961192-ecb7d278-7797-4ed7-a548-5d6826aa341c.png">
-
-Scroll down to 'Linux Installers' and right-click on Miniconda3-Linux64-bit to copy the link.
-
-<img width="894" alt="Pic4" src="https://user-images.githubusercontent.com/70609417/171961207-144d8b7b-4ce3-481a-b9aa-971a05fc2aac.png">
-
-Make sure you're in the compute directory: `cd ~/compute`
-
-Then use `wget` with the copied url:
-
-<img width="1020" alt="Pic5" src="https://user-images.githubusercontent.com/70609417/171961222-a8438128-f1ea-47b7-b556-4b0c628c41e6.png">
-
-Your screen should look something like this:
-
-<img width="839" alt="Pic6" src="https://user-images.githubusercontent.com/70609417/171961238-6320e55a-f9de-4a0a-aed9-a55133d4fb38.png">
-
-#### Step 2: Initialize CONDA
-
-Type in `bash Miniconda3-latest-Linux-x86_64.sh` and hit enter. When prompted, accept any
-terms and conditions / questions (say yes by hitting the `Y` key or hit enter). 
-\* the easiest thing to do is use tab complete: type `bash Mi`, then hit tab, and the rest should fill in.
-
-<img width="809" alt="Pic7" src="https://user-images.githubusercontent.com/70609417/171961258-e8f74445-372f-460c-b90b-110824a371a0.png">
-
-When you're done, the command line will appear with a (base) after typing in
-`source ~/.bashrc`.
-
-<img width="363" alt="Pic8" src="https://user-images.githubusercontent.com/70609417/171961286-0b93c9a6-40c0-4c94-a015-5d012125454a.png">
-
 ### Writing a Job File
 
 We'll be using the Job Script Generator.
