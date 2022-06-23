@@ -52,7 +52,7 @@ print(three_pops.get_basic_info())
 ```
 Now, let's run an FST on all three. You can do this with:
 ```
->>> three_pops.get_multilocus_f_stats()
+three_pops.get_multilocus_f_stats()
 ```
 
 This will output the three populations' averaged FIS, FST, and FIT (in that order). Now, I would like to you to run the following analyses, modifying the input file so that it works for each analysis. The results from these analyses should be placed into a table as part of your lab write-up. In order to conduct pairwise comparisons, you'll need to make a copy of the file and modify it so that it only includes two populations. In order to conduct three population comparisons, you can use the entire file.
