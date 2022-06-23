@@ -69,7 +69,7 @@ Now we're going to calculate all of the population genetics summary statistics w
 ```
 pp = popgenstat.PopulationPairSummaryStatistics(p1, p2)
 ```
-Let's look at the pairwise differences within the total dataset, and then each between and within populations (keep these for a table for the lab write-up).
+Let's look at the pairwise differences within the total dataset, and then each between and within populations (keep these for a table for the lab write-up):
 ```
 print('Average number of pairwise differences (total): %s' % pp.average_number_of_pairwise_differences)
 print('Average number of pairwise differences (between populations): %s' % pp.average_number_of_pairwise_differences_between)
