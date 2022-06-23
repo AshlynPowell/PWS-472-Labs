@@ -5,7 +5,7 @@ We will be using the Python package `dendropy` to generate summary statistics ab
 
 First, login to the supercomputer using PuTTy or your Mac terminal.
 
-Next, load conda and activate the `dendropy` environment.
+Then, load conda and activate the `dendropy` environment:
 ```
 module load conda
 conda activate dendropy
