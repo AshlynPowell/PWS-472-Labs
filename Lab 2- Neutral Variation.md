@@ -39,7 +39,7 @@ To load the primate mitochondrial alignment, enter:
 primate_mito = dendropy.DnaCharacterMatrix.get_from_path("primate.nex", schema="nexus")
 ```
 
-Now let's take a look at the average number of pairwise differences (keep in mind that you'll put these in a table in your lab write-up:
+Now let's take a look at the average number of pairwise differences (keep in mind that you'll put these in a table in your lab write-up):
 ```
 print(popgenstat.average_number_of_pairwise_differences(primate_mito))
 ```
