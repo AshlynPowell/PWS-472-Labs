@@ -1,25 +1,16 @@
 ## Lab 2: Neutral Variation
 This lab will take at a few sample files. One with mitochondrial data from primates and another with two populations of stickleback fish that includes individuals from the Eastern Pacific and from the Western Pacific (you can look at the paper here: [https://doi.org/10.1111/j.1558-5646.1994.tb01348.x](https://doi.org/10.1111/j.1558-5646.1994.tb01348.x)
 
-We will be using the Python package `dendropy` to generate summary statistics about the two populations, including Tajima's D. We will be doing this on the supercomputer in your `miniconda` environment. We went over how to set up your `miniconda` environment in class. If you need more information visit: [https://docs.conda.io/en/latest/miniconda.html](https://docs.conda.io/en/latest/miniconda.html).
+We will be using the Python package `dendropy` to generate summary statistics about the two populations, including Tajima's D. 
 
 First, login to the supercomputer using PuTTy or your Mac terminal.
 
-Now, create a new virtual environment in `miniconda` called `dendropy`. You can do this with the following command:
+Next, load conda and activate the `dendropy` environment.
 ```
-conda create -n dendropy
-```
-Follow the prompts to create the environment. Then to activate the environment, enter the command:
-```
+module load conda
 conda activate dendropy
 ```
-Now you are in your virtual environment and you need to install the `dendropy` package. Feel free to look at what `dendropy` does, but today we will be primarily using just a couple of functions. To install the `dendropy` package in your virtual environment, enter the following command:
-```
-conda install -c bioconda dendropy
-```
-Follow the prompts to install the package. Great! Now you have a fresh virtual environment with `dendropy` installed.
-
-Now move to your compute directory and copy the data for today's lab into your directory:
+Now, move to your compute directory and copy the data for today's lab into your directory:
 ```
 cd ~/compute
 cp -r ~/fsl_groups/fslg_pws472/compute/lab2 ./
