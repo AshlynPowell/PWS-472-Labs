@@ -7,13 +7,12 @@ You will have an opportunity to explore GenBank assemblies of other moths and re
 ### Step 1: Login to the supercomputer, create a new folder for your analysis, and copy over the raw data
 
 Open the command prompt or the terminal application and `ssh` into the supercomputer.
-```
-ssh <username>@ssh.rc.byu.edu
-```
+
 Change directories into your compute directory and create a new directory called `lab5`.
 ```
-cd compute
+cd ~/compute
 mkdir lab5
+cd lab5
 ```
 Copy the raw PacBio read `FASTQ` and `FASTA` files from our shared PWS 472 directory. We will use the `FASTQ` file for the assembly, but we will use the `FASTA` file to estimate the average read length and the total number of base pairs in the raw data.
 ```
@@ -21,37 +20,25 @@ cp ~/fsl_groups/fslg_pws472/compute/lab5/data/m64140_201011_172335.Q20.fast* ./
 ```
 Notice that, in the command above, we use a wildcard `*` to copy both the `FASTA` file and the `FASTQ` file.
 
-### Step 2: Ensure that NumPy is installed in your `conda` distribution and evaluate the raw reads with the assembly stats script
+### Step 2: Evaluate the raw reads with the assembly stats script
 
-Make sure that `conda` is loaded. If it is, you should see `(base)` in front of your command prompt. To make sure it gets loaded, try:
-```
-source ~/.bashrc
-```
-Install `numpy` with conda
-```
-conda install numpy
-```
 Copy the `assembly_stats` script to your folder.
 ```
 cp -r ~/fsl_groups/fslg_pws472/compute/lab5/data/assembly_stats ./
 ```
-Run `assembly_stats` on your `FASTA` raw reads. Note that this script is primarily used to assess the completeness of a *genome assembly* not necessarily raw data. However, we will use it here to figure out the average read length and the total number of base pairs in the raw data. You will later use these to estimate the coverage in the raw data.
+Make sure conda is loaded (`module load conda`) then run `assembly_stats` on your `FASTA` raw reads. Note that this script is primarily used to assess the completeness of a *genome assembly* not necessarily raw data. However, we will use it here to figure out the average read length and the total number of base pairs in the raw data. You will later use these to estimate the coverage in the raw data.
 ```
 python assembly_stats/assembly_stats.py m64140_201011_172335.Q20.fasta
 ```
 You should see two different `JSON` objects entitled "Contig Stats:" and "Scaffold Stats:". They will be the same values and, for this part of the exercise, what we are actually measuring are "Read Stats:". Take note of the total number of base pairs and the average read lengths. You'll use these later.
 
-### Step 3: Install the assembler, `hifiasm` using `conda`, prepare a job script for assembly and start your assembly job
+### Step 3: Prepare a job script for assembly and start your assembly job
 
-Create a new virtual environment in `conda` and install the assembly software [`hifiasm`](https://github.com/chhylp123/hifiasm).
-```
-conda create -n hifiasm -c bioconda hifiasm
-```
 Create a new job script using the [Job Script Generator](https://rc.byu.edu/documentation/slurm/script-generator). Make sure that the job is limited to one node, select 24 processor cores, a wall-time of 2 hours, and 1 GB per processor. Add a name for your job and select the boxes to receive emails when your job begins, ends, and/or aborts. Copy the script from below **Job Script** on the webpage and paste it into a new file called `hifiasm.job` in your folder. Use your favorite text editor to do this.
 
 Open the job file and add the following commands to the bottom, separated by line breaks:
 ```
-source ~/.bashrc
+module load conda
 conda activate hifiasm
 hifiasm -o plodia.asm -t 24 m64140_201011_172335.Q20.fastq
 ```
@@ -61,12 +48,8 @@ sbatch hifiasm.job
 ```
 You can check on your job using `squeue -u <username>`. It should complete relatively quickly and you will receive an email when it does. In the meantime, you can move to the next step to install `BUSCO` and get the job file ready for job submission.
 
-### Step 4: Install `BUSCO` and generate a new job file for your `BUSCO` run
+### Step 4: Generate a new job file for your `BUSCO` run
 
-Create a new virtual environment in `conda` and install `BUSCO` v. 5
-```
-conda create -n busco -c bioconda busco=5.3.2
-```
 Create a new job script using the [Job Script Generator](https://rc.byu.edu/documentation/slurm/script-generator). Make sure that the job is limited to one node, select 4 processor cores, 4 GB of RAM per processor, and a wall-time of 12 hours. Copy the resulting script into a new job file called `busco.job`.
 
 Copy the `busco_downloads` folder from the `pws472` class folder to your working folder
@@ -75,7 +58,7 @@ cp -r ~/fsl_groups/fslg_pws472/compute/lab5/data/busco_downloads ./
 ```
 d. Open the job file and add the following commands to the bottom, separated by line breaks:
 ```
-source ~/.bashrc
+module load conda
 conda activate busco
 busco -o plodia_busco -i plodia.asm.bp.p_ctg.fa -l insecta_odb10 -c 4 -m genome --offline
 ```
@@ -95,7 +78,7 @@ You'll want to make sure that you keep this information handy. I'd like to see i
 
 ### Step 6: Run `BUSCO` on your assembly
 
-a. Since you already created the job file, you can simply submit the new file with `sbatch`.
+Since you already created the job file, you can simply submit the new file with `sbatch`.
 ```
 sbatch busco.job
 ```
