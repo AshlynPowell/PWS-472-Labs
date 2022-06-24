@@ -9,40 +9,14 @@ We will be using samfiles that I have already mapped reads to. Reminder, that yo
 cd ~/compute
 cp -r ~/fsl_groups/fslg_pws472/compute/lab7 ./
 cd lab7
-mkdir jobs
 ```
 
-### 2. Install `R` and `ANGSD` using `bioconda`
-
-```
-source ~/.bashrc
-conda create -n r
-conda activate r
-conda install -c conda-forge r
-conda deactivate
-conda create -n angsd python=3.7
-conda activate angsd
-conda install -c bioconda angsd
-conda install -c conda-forge cython
-conda install scipy
-conda install pandas
-conda install -c conda-forge pandas-plink=1.2.31
-conda deactivate
-```
-
-### 3. Generate genotype likelihoods with `ANGSD`
-Create a new directory in your  `lab7`  directory called  `angsd`.
-
-```
-cd ~/compute/lab7
-mkdir angsd
-cd angsd
-```
-    
-Next, we're going to create a file called  `bamlist.txt`. This file will have relative paths to all of the bam files that we will use for this step.
+### 2. Generate genotype likelihoods with `ANGSD`
+We're going to create a file called  `bamlist.txt` in the `angsd` directory. This file will have relative paths to all of the bam files that we will use for this step.
     
 You can create this list with the command:
 ```
+cd angsd
 ls ../variants/*mdup.bam > bamlist.txt
 ```
 When you create it, if you view it with `cat`, it should look something like the following:  
@@ -63,7 +37,7 @@ Remember that you can do this with the job script generator from the [supercompu
     
 You should choose 4GB of RAM per CPU and 12 CPUs. The  `ANGSD`  command for to call the genotypes for a PCA is:
 ```
-source ~/.bashrc
+module load conda
 conda activate angsd
 angsd -GL 1 -out PCA -nThreads $SLURM_NPROCS -doGlf 2 -doMajorMinor 1 -SNP_pval 1e-6 -doMaf 1 -bam bamlist.txt
 ```
