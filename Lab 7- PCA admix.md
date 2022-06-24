@@ -47,23 +47,11 @@ sbatch angsd_geno_like.job
 ``` 
 When it is complete, look at the files in your directory. You should have three new files:  `PCA.arg`,  `PCA.beagle.gz`, and  `PCA.mafs.gz`. For the next step, we're going to generate a covariance matrix using the beagle file (which contains the genotype likelihoods) using  `PCAngsd`.
 
-### 4. Generate a covariance matrix using  `PCAngsd`
+### 3. Generate a covariance matrix using  `PCAngsd`
 
-In this step, we're going to use the  `PCA.beagle.gz`  file to create a covariance matrix in  `PCAngsd`.
-
-First we have to install `PCAngsd`. You can do this with the following commands:
+In this step, we're going to use the  `PCA.beagle.gz`  file to create a covariance matrix in  `PCAngsd`. To create covariance matrix:  
 ```
-cd ~/compute/lab7
-wget https://github.com/Rosemeis/pcangsd/archive/refs/tags/v.0.99.tar.gz
-tar -xvzf v.0.99.tar.gz
-cd pcangsd-v.0.99/
-conda activate angsd
-python setup.py build_ext --inplace
-cd ../angsd
-```
-To create covariance matrix:  
-```
-python ../pcangsd-v.0.99/pcangsd.py -b PCA.beagle.gz -o siskin_PCA
+python ~/fsl_groups/fslg_pws472/apps/miniconda3/envs/angsd/bin/pcangsd-v.0.99/pcangsd.py -b PCA.beagle.gz -o siskin_PCA
 ```
 After this is finished running, you should have a file in your directory called  `siskin_PCA.cov`. This is your covariance matrix and can be used to generate your PCA.
 
