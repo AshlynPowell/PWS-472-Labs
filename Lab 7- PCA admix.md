@@ -55,7 +55,7 @@ python ~/fsl_groups/fslg_pws472/apps/miniconda3/envs/angsd/bin/pcangsd-v.0.99/pc
 ```
 After this is finished running, you should have a file in your directory called  `siskin_PCA.cov`. This is your covariance matrix and can be used to generate your PCA.
 
-### 5. Create your PCA plot
+### 4. Create your PCA plot
 
 You can plot the PCA with an  `R`  script that can be found in  `~/fsl_groups/fslg_pws472/compute/lab7/scripts/PCA_plot.r`. Copy it into your  `angsd`  folder. In order to run it, you need to have a list with the sample names in the same order as the original  `bamlist`,  `siskin_pop.txt`, in the same directory as the both the script and your covariance matrix. You can copy this file from  `~/fsl_groups/fslg_pws472/compute/lab7/angsd/siskin_pop.txt`. You may need to modify this list so that the filenames match perfectly with the file names in your `bamlist`. 
 ```
@@ -63,7 +63,7 @@ conda deactivate
 conda activate r
 Rscript PCA_plot.r
 ```
-### 6. Run Admixture analysis with `NGSAdmix`
+### 5. Run Admixture analysis with `NGSAdmix`
 
 `NGSAdmix` is now part of the `ANGSD` package and can perform admixture analysis using the beagle file of genotype likelihoods that you generated in step 1. `cd` into your `jobs` directory and create a job file with the following commands. The parameter that you need to think about here is `K`, which as you learned in the lecture is the number of ancestral populations. Since we have two populations in this dataset, one from Venezuela and one from Guyana, we will set `K` to 2.
 ```
@@ -72,7 +72,7 @@ NGSadmix -likes ../angsd/PCA.beagle.gz -K 2 -o ../angsd/siskin_admix -P $SLURM_N
 ```
 When the job is finished, you will have a couple of new files in the `angsd` directory. `siskin_admix.fopt.gz` is a gzipped file that contains the estimated allele frequencies for each population for each locus. `siskin_admix.qopt` contains the estimated admixture proportions for each individual.
 
-### 7. Create simple admixture plot
+### 6. Create simple admixture plot
 Now we will create a simple admixture plot using our results from `NGSadmix`
 Copy the script, `admix_plot.r` from `~/fsl_groups/fslg_pws472/compute/lab7/scripts/admix_plot.r` to your `angsd` directory.
 Make sure that `siskin_pop.txt` is still in your directory. This is another fast script, which is fine to run with `qrsh`.
@@ -82,10 +82,10 @@ Rscript admix_plot.r
 ```
 You will now have a plot in an image called `siskin_admix.png`. Feel free to download it and take a look. You will notice that, for these populations, there is very little evidence of admixture with a `K` of 2.
 
-### 8. Rerun 8 and 9 with a `K` of 3 and a `K` of 4
+### 7. Rerun steps 5 and 6 with a `K` of 3 and a `K` of 4
 We don't have enough individuals to make this very interesting, but re-run number 6 and 7, with different `K` numbers. Name the output differently so you don't overwrite your first results. Modify the `R` script so that it reads the new file and writes a different image name. What do you notice?
 
-### 9. For the Lab write-up
+### 8. For the Lab write-up
 This lab will combined with lab 8 into a single lab write-up (double the amount of points and double the length). However, feel free to get started with this one. Consider the following as you write it up:
 - Your lab write-up should contain clear methods on which analyses you performed and why
 - When introducing each method, you should give a short explanation of what the software is actually doing
