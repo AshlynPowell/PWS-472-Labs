@@ -8,10 +8,10 @@ Return to the home page and click on the “Option 6 Help” to the right of opt
 
 Now, open your terminal/command prompt and `ssh` into the supercomputer.
 
-Now navigate to your compute directory and create a new directory entitled `Lab1`. 
+Now navigate to your compute directory and create a new directory entitled `lab1`. 
 ```
 cd ~/compute
-mkdir Lab1
+mkdir lab1
 ```
 Now copy the data for this exercise from our shared folder into your `lab1` directory. 
 ```
