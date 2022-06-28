@@ -26,7 +26,7 @@ Copy the `assembly_stats` script to your folder.
 ```
 cp -r ~/fsl_groups/fslg_pws472/compute/lab5/data/assembly_stats ./
 ```
-Make sure conda is loaded (`module load conda`) then run `assembly_stats` on your `FASTA` raw reads. Note that this script is primarily used to assess the completeness of a *genome assembly* not necessarily raw data. However, we will use it here to figure out the average read length and the total number of base pairs in the raw data. You will later use these to estimate the coverage in the raw data.
+Make sure conda is loaded (`module load miniconda3/4.12-pws-472`) then run `assembly_stats` on your `FASTA` raw reads. Note that this script is primarily used to assess the completeness of a *genome assembly* not necessarily raw data. However, we will use it here to figure out the average read length and the total number of base pairs in the raw data. You will later use these to estimate the coverage in the raw data.
 ```
 python assembly_stats/assembly_stats.py m64140_201011_172335.Q20.fasta
 ```
@@ -38,7 +38,7 @@ Create a new job script using the [Job Script Generator](https://rc.byu.edu/docu
 
 Open the job file and add the following commands to the bottom, separated by line breaks:
 ```
-module load conda
+module load miniconda3/4.12-pws-472
 conda activate hifiasm
 hifiasm -o plodia.asm -t 24 m64140_201011_172335.Q20.fastq
 ```
@@ -58,7 +58,7 @@ cp -r ~/fsl_groups/fslg_pws472/compute/lab5/data/busco_downloads ./
 ```
 d. Open the job file and add the following commands to the bottom, separated by line breaks:
 ```
-module load conda
+module load miniconda3/4.12-pws-472
 conda activate busco
 busco -o plodia_busco -i plodia.asm.bp.p_ctg.fa -l insecta_odb10 -c 4 -m genome --offline
 ```
