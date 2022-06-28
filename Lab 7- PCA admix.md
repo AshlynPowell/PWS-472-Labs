@@ -37,7 +37,7 @@ Remember that you can do this with the job script generator from the [supercompu
     
 You should choose 4GB of RAM per CPU and 12 CPUs. The  `ANGSD`  command for to call the genotypes for a PCA is:
 ```
-module load conda
+module load miniconda3/4.12-pws-472
 conda activate angsd
 angsd -GL 1 -out PCA -nThreads $SLURM_NPROCS -doGlf 2 -doMajorMinor 1 -SNP_pval 1e-6 -doMaf 1 -bam bamlist.txt
 ```
