@@ -7,7 +7,7 @@ First, login to the supercomputer using PuTTy or your Mac terminal.
 
 Then, load conda and activate the `dendropy` environment:
 ```
-module load conda
+module load miniconda3/4.12-pws-472
 conda activate dendropy
 ```
 Now, move to your compute directory and copy the data for today's lab into your directory:
