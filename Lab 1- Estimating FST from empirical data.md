@@ -21,7 +21,7 @@ The data contained in this file are for three loci (Loc1, Loc2, and Loc3) spread
 
 To get started, let's load conda and switch to your `biopython` virtual environment.
 ```
-module load conda
+module load miniconda3/4.12-pws-472
 conda activate biopython
 ```
 Now, "(biopython)" should be in front of your cursor. Next, lets start up Python.
