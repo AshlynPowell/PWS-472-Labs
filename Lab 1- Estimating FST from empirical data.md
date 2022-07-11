@@ -1,4 +1,4 @@
-## Lab #1: Estimating FST from empirical data
+## Lab 1: Estimating FST from empirical data
 
 Navigate to http://genepop.curtin.edu.au. This is the website for the GenePop software. GenePop can do many different population genetics operations. However, today, we will be using GenePop to estimate FST values from empirical data. We are going to be using the version that comes packed with Biopython. We will get started by doing some of the things outlined here: https://www.tutorialspoint.com/biopython/biopython_population_genetics.htm. 
 
