@@ -24,7 +24,7 @@ To get started, let's load conda and switch to your `biopython` virtual environm
 module load miniconda3/4.12-pws-472
 conda activate biopython
 ```
-Now, "(biopython)" should be in front of your cursor. Next, lets start up Python.
+Now, `(biopython)` should be in front of your cursor. Next, lets start up Python.
 ```
 python
 ```
