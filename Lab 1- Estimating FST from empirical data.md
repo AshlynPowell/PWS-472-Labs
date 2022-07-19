@@ -67,3 +67,4 @@ Questions to consider for your lab write up:
 2.	What might this suggest about the different habitat types?
 3.	Does each locus tell the same story about the differences between these populations?
 4.	Why might that be?
+
