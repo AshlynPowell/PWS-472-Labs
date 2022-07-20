@@ -52,6 +52,7 @@ When it is complete, look at the files in your directory. You should have three 
 In this step, we're going to use the  `PCA.beagle.gz`  file to create a covariance matrix in  `PCAngsd`. To create covariance matrix:  
 ```
 module load miniconda3/4.12-pws-472
+conda activate angsd
 python ~/fsl_groups/fslg_pws472/apps/miniconda3/envs/angsd/bin/pcangsd-v.0.99/pcangsd.py -b PCA.beagle.gz -o siskin_PCA
 ```
 After this is finished running, you should have a file in your directory called  `siskin_PCA.cov`. This is your covariance matrix and can be used to generate your PCA.
